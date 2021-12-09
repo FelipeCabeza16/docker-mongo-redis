@@ -1,1 +1,2 @@
-sudo run redis
+sudo docker build -t hellonode .
+sudo docker run -p 3000:3000 hellonode

@@ -1,17 +1,23 @@
 # Aplicación hecha en express-mongo-redis-docker #
 
-Para correr la app en producción __npm run start__
+Para correr la app se hace un __sudo docker-compose up__
 
-Para correr el comando para desarrollo __npm run dev__
+Base de datos de un modelo con mongo y redis para un blog, 
 
-Base de datos de un modelo con mongo para un blog, se conecta a la base de datos de mongo
+__Cuando se hace una inserción en post se inserta a la base de datos de redis y de mongo__
 
 BASE DE DATOS __mongodb://127.0.0.1:27017/blog-api-dev)__
 
 ## Endpoints ##
 
 
-_GET_ _/blogs/_ --> Recupera todos los blogs (se necesita al menos haber insertado uno)
+_GET_ _/blogs/mongo_ --> Recupera todos los blogs con mongo
+
+_GET_ _/blogs/redis_ --> Recupera todos los blogs con redis
+
+_GET_ _/blogs/mongo/:id_ --> Recupera el blog por id con mongo
+
+_GET_ _/blogs/redis/:id_ --> Recupera el blog por id con redis
 
 
 _POST_ _/blogs/_ --> Inserta un blog, ver el ejemplo del JSON abajo

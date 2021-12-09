@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://127.0.0.1:27017/blog-api-dev', {
+mongoose.connect('mongodb://localhost/blog-api-dev', {
     useNewUrlParser: true,
     // useCreateIndex: true,
     // useFindAndModify: false,
     useUnifiedTopology: true
-})
+}).then(db => console.log('DB connected ', db.connection.host))

@@ -1,0 +1,29 @@
+version: '3'
+services:
+  web:
+    container_name: exampleapp
+    restart: always
+    build: .
+    ports:
+      - "3000:3000"
+    links: 
+      - mongo
+      
+  mongo:
+    container_name: mymongodatabase
+    image: mongo
+    ports:
+        - "27018:27017"
+      
+    # dockerfile: Dockerfile
+    # environment:
+    #   - MONGO_INITDB_ROOT_USERNAME=root
+    #   - MONGO_INITDB_ROOT_PASSWORD=root
+    #   - MONGO_INITDB_DATABASE=blog-api-dev
+  redis:
+    image: "redis:alpine"    
+    ports: 
+      - 6379:6379
+    restart: always
+    links: 
+      - mongo
