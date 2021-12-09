@@ -1,3 +1,7 @@
+# Aplicación hecha en express-mongo-redis-docker #
+
+Para correr la app en producción __npm run start__
+
 Para correr el comando para desarrollo __npm run dev__
 
 Base de datos de un modelo con mongo para un blog, se conecta a la base de datos de mongo
