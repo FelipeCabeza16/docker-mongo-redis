@@ -1,7 +1,7 @@
 # Aplicación hecha en express-mongo-redis-docker #
 
-## Para correr la app se hace un 
-- ![sudo docker-compose up](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
+## Para correr la app se hace un  f03c15
+- ![f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `sudo docker-compose up`
 
 Base de datos de un modelo con mongo y redis para un blog, 
 
