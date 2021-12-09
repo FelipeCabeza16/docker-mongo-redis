@@ -9,13 +9,20 @@ app.use(express.json());
 
 app.use(blogRouter)
 
-const client = redis.createClient();
 
-client.on('connect', () => {
-    console.log('conectado')
-});
+try {
+    const client = redis.createClient();
+
+    client.on('connect', () => {
+        console.log('conectado')
+    });
 
 
-app.listen(3000, () => {
-    console.log('listening on port 3000');
-});
+    app.listen(3000, () => {
+        console.log('listening on port 3000');
+    });
+    client.connect();
+    
+} catch (e) {
+    console.log('error');
+}
