@@ -1,6 +1,10 @@
-# Aplicación hecha en express-mongo-redis-docker #
+## Aplicación hecha en express-mongo-redis-docker ##
 
-## Para correr la app se hace un __sudo docker-compose up__ ##
+# Correr la app #
+
+Para correr la app se hace un __sudo docker-compose up__ 
+
+## Detalles ##
 
 Base de datos de un modelo con mongo y redis para un blog, 
 
