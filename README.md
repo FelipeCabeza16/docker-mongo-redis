@@ -8,6 +8,8 @@ BASE DE DATOS __mongodb://127.0.0.1:27017/blog-api-dev)__
 
 
 _GET_ _/blogs/_ --> Recupera todos los blogs (se necesita al menos haber insertado uno)
+
+
 _POST_ _/blogs/_ --> Inserta un blog, ver el ejemplo del JSON abajo
 
 Ejemplo 
