@@ -7,11 +7,10 @@ BASE DE DATOS __mongodb://127.0.0.1:27017/blog-api-dev)__
 ## Endpoints ##
 
 
-_GET_ _/blogs/_
+_GET_ _/blogs/_ --> Recupera todos los blogs (se necesita al menos haber insertado uno)
+_POST_ _/blogs/_ --> Inserta un blog, ver el ejemplo del JSON abajo
 
-_POST_ _/blogs/_
-
-Example 
+Ejemplo 
 {
     "title": "Como ser mi propio jefe",
     "author": "Gabriel Vega",
