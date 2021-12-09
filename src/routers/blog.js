@@ -3,6 +3,8 @@ const router = new express.Router()
 
 const BlogCtrl = require('../controllers/blog')
 
-router.get('/plans/get_current_plan', BlogCtrl.getBlog),
+router.get('/blogs/', BlogCtrl.getBlog),
+router.post('/blogs/', BlogCtrl.postBlog),
+
 
 module.exports = router
