@@ -15,16 +15,16 @@ BASE DE DATOS __mongodb://127.0.0.1:27017/blog-api-dev)__
 ## Endpoints ##
 
 
-_GET_ _/blogs/mongo_ --> Recupera todos los blogs con mongo
+_GET_ _localhost:3000/blogs/mongo_ --> Recupera todos los blogs con mongo
 
-_GET_ _/blogs/redis_ --> Recupera todos los blogs con redis
+_GET_ _localhost:3000/blogs/redis_ --> Recupera todos los blogs con redis
 
-_GET_ _/blogs/mongo/:id_ --> Recupera el blog por id con mongo
+_GET_ _localhost:3000/blogs/mongo/:id_ --> Recupera el blog por id con mongo
 
-_GET_ _/blogs/redis/:id_ --> Recupera el blog por id con redis
+_GET_ _localhost:3000/blogs/redis/:id_ --> Recupera el blog por id con redis
 
 
-_POST_ _/blogs/_ --> Inserta un blog, ver el ejemplo del JSON abajo
+_POST_ _localhost:3000/blogs/_ --> Inserta un blog, ver el ejemplo del JSON abajo
 
 Ejemplo 
 {
