@@ -1,0 +1,20 @@
+{
+  "name": "docker-redis-mongo",
+  "version": "1.0.0",
+  "description": "Conexion a mongo con docker y redis",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "author": "Felipe Cabeza",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^4.2.1",
+    "mongoose": "^6.0.15"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
