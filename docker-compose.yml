@@ -13,13 +13,14 @@ services:
     container_name: mymongodatabase
     image: mongo
     ports:
-        - "27018:27017"
+        - "27017:27017"
+    environment:
+    - MONGO_INITDB_ROOT_USERNAME=root
+    - MONGO_INITDB_ROOT_PASSWORD=root
+    - MONGO_INITDB_DATABASE=blog-api-dev
       
-    # dockerfile: Dockerfile
-    # environment:
-    #   - MONGO_INITDB_ROOT_USERNAME=root
-    #   - MONGO_INITDB_ROOT_PASSWORD=root
-    #   - MONGO_INITDB_DATABASE=blog-api-dev
+  # dockerfile: Dockerfile
+  
   redis:
     image: "redis:alpine"    
     ports: 
