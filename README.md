@@ -2,7 +2,7 @@
 
 # Correr la app #
 
-Para correr la app se hace un __sudo docker-compose up__ 
+Para correr la app se hace un __sudo docker-compose up --build__ 
 
 ## Detalles ##
 
@@ -10,7 +10,6 @@ Base de datos de un modelo con mongo y redis para un blog,
 
 __Cuando se hace una inserción en post se inserta a la base de datos de redis y de mongo__
 
-BASE DE DATOS __mongodb://127.0.0.1:27017/blog-api-dev)__
 
 ## Endpoints ##
 
