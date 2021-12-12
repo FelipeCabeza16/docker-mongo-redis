@@ -1,3 +1,6 @@
+## Andrés Felipe Cabeza Serrano - 2162106 
+## Gabriel Felipe Vega Ochoa - 2170122 
+
 ## Aplicación hecha en express-mongo-redis-docker ##
 
 # Correr la app #
