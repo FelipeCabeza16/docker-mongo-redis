@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://web-app/blog-api-dev', {
+mongoose.connect('mongodb://mongo-server/blog-api-dev', {
     useNewUrlParser: true,
     // useCreateIndex: true,
     // useFindAndModify: false,

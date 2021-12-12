@@ -17,15 +17,13 @@ exports.getBlogsByMongo = async (req, res) => {
 exports.getBlogsByRedis = async (req, res) => {
 
     try {
-        const client = redis.createClient({
-            host: "redis-server",
-            port: 6379
-        });
+        const client = redis.createClient({url: 'redis://redis-server:6379'});
         client.connect();
         const blogs = await client.hGetAll('blogs');
         client.quit();
         res.send(blogs)
     } catch (error) {
+        console.log('ERROR DETECTADO');
         console.log(error);
         res.send(400).send(error);
     }
@@ -47,13 +45,13 @@ exports.getBlogByIDMongo = async (req, res) => {
 exports.getBlogByIDRedis = async (req, res) => {
     try {
 
-        const client = redis.createClient();
+        const client = redis.createClient({url: 'redis://redis-server:6379'});
         client.connect();
         const id = req.params.id;
         const blog = await client.hGet('blogs', id);
         client.quit();
         res.send(blog);
-    } catch(e){
+    } catch (e) {
         console.log(error);
         res.send(400).send(error);
     }
@@ -65,15 +63,12 @@ exports.postBlog = async (req, res) => {
         const blog = new Blog(req.body);
         await blog.save();
         // conexion con redis        
-        const client = redis.createClient({
-            host: "redis-server",
-            port: 6379
-        });;
+        const client = redis.createClient({url: 'redis://redis-server:6379'});
         client.connect();
         await client.hSet('blogs', blog._id.toString(), JSON.stringify(blog));
         client.quit();
         res.send({ blog })
-        
+
     } catch (error) {
         console.log(error);
         res.send(400).send(error);
