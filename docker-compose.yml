@@ -1,30 +1,32 @@
 version: '3'
 services:
-  web:
+  mongo-server:
+    container_name: mymongodatabase
+    image: mongo
+    ports:
+        - "27018:27017"
+    network_mode: "docker-mongo-redis_default"
+    # environment:
+    # - MONGO_INITDB_ROOT_USERNAME=root
+    # - MONGO_INITDB_ROOT_PASSWORD=root
+    # - MONGO_INITDB_DATABASE=blog-api-dev
+      
+  # dockerfile: Dockerfile
+  
+  redis-server:
+    image: "redis:alpine"    
+    ports: 
+      - 6379:6379
+    restart: always
+    network_mode: "docker-mongo-redis_default"
+
+  web-app:
     container_name: exampleapp
     restart: always
     build: .
     ports:
       - "3000:3000"
     links: 
-      - mongo
+      - mongo-server
+    
       
-  mongo:
-    container_name: mymongodatabase
-    image: mongo
-    ports:
-        - "27017:27017"
-    environment:
-    - MONGO_INITDB_ROOT_USERNAME=root
-    - MONGO_INITDB_ROOT_PASSWORD=root
-    - MONGO_INITDB_DATABASE=blog-api-dev
-      
-  # dockerfile: Dockerfile
-  
-  redis:
-    image: "redis:alpine"    
-    ports: 
-      - 6379:6379
-    restart: always
-    links: 
-      - mongo

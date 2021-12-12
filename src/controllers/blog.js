@@ -17,7 +17,10 @@ exports.getBlogsByMongo = async (req, res) => {
 exports.getBlogsByRedis = async (req, res) => {
 
     try {
-        const client = redis.createClient();
+        const client = redis.createClient({
+            host: "redis-server",
+            port: 6379
+        });
         client.connect();
         const blogs = await client.hGetAll('blogs');
         client.quit();
@@ -62,7 +65,10 @@ exports.postBlog = async (req, res) => {
         const blog = new Blog(req.body);
         await blog.save();
         // conexion con redis        
-        const client = redis.createClient();
+        const client = redis.createClient({
+            host: "redis-server",
+            port: 6379
+        });;
         client.connect();
         await client.hSet('blogs', blog._id.toString(), JSON.stringify(blog));
         client.quit();
